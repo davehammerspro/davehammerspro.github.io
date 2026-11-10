@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Devlet Boltayev, a first-year IT student at Inha University in Tashkent. Courses, projects, and network detective notes.">
+  <meta name="color-scheme" content="light dark">
+  <title>Devlet Boltayev — IT Student</title>
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+    } catch (error) { /* The system theme works when storage is unavailable. */ }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="#" aria-label="Devlet Boltayev home"><span>{</span>devlet<span>}</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#courses">Courses</a>
+      <a href="#projects">Projects</a>
+      <a href="#network">Network</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch color theme" hidden>
+      <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.5 13.2A8.5 8.5 0 0 1 10.8 3.5a8.5 8.5 0 1 0 9.7 9.7Z"/></svg>
+      <span class="theme-label">Dark mode</span>
+    </button>
+  </header>
+
+  <main id="main">
+    <section class="hero reveal" id="about" aria-labelledby="intro-title">
+      <p class="eyebrow"><span class="status-dot"></span> ABOUT ME</p>
+      <h1 id="intro-title">Hi, I’m Devlet Boltayev<span class="accent">.</span></h1>
+      <p class="intro">I study Information Technology at Inha University in Tashkent. I’m learning how to write code, understand networks, and solve problems one step at a time.</p>
+      <a class="text-link" href="#projects">Explore my work <span aria-hidden="true">↗</span></a>
+      <div class="hero-bottom"><span>Tashkent, Uzbekistan</span><span>Learning. Building. Exploring.</span></div>
+    </section>
+
+    <section class="section reveal" id="courses" aria-labelledby="courses-title">
+      <div class="section-heading"><p class="eyebrow">01 / LEARNING</p><h2 id="courses-title">My courses<span class="accent">.</span></h2></div>
+      <ul class="course-list">
+        <li><span>Academic English Reading</span><span class="course-number" aria-hidden="true">01</span></li>
+        <li><span>Academic English 1</span><span class="course-number" aria-hidden="true">02</span></li>
+        <li><span>Physics 1</span><span class="course-number" aria-hidden="true">03</span></li>
+        <li><span>Calculus 1</span><span class="course-number" aria-hidden="true">04</span></li>
+        <li><span>Introduction to IT</span><span class="course-number" aria-hidden="true">05</span></li>
+        <li><span>Object-Oriented Programming</span><span class="course-number" aria-hidden="true">06</span></li>
+      </ul>
+    </section>
+
+    <section class="section reveal" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading"><p class="eyebrow">02 / EXPLORING</p><h2 id="projects-title">Projects<span class="accent">.</span></h2></div>
+      <article class="project">
+        <div class="project-top"><span class="tag">INTRODUCTION TO IT</span><span class="lab-label">LAB 8a</span></div>
+        <h3>Network detective</h3>
+        <p>My notes from exploring how data travels across the internet. I found my network addresses, looked inside packets with Wireshark, followed their route with traceroute, asked DNS servers with dig, and explored why HTTPS matters.</p>
+        <a class="text-link" href="#network">Read my findings <span aria-hidden="true">↓</span></a>
+        <div class="project-tools" aria-label="Tools and topics"><span>Wireshark</span><span>traceroute</span><span>dig</span><span>HTTPS</span></div>
+      </article>
+    </section>
+
+    <section class="section reveal" id="network" aria-labelledby="network-title">
+      <div class="section-heading"><p class="eyebrow">03 / LAB NOTES</p><h2 id="network-title">Network detective<span class="accent">.</span></h2></div>
+      <div class="notes">
+        <article class="note"><span class="note-index">01</span><div><h3>My connection</h3><p>My ISP is UNITEL LLC, also known as Beeline Uzbekistan (AS41202). My default gateway is an iPhone personal hotspot.</p></div></article>
+        <article class="note"><span class="note-index">02</span><div><h3>A small hardware mystery</h3><p>The hotspot’s MAC address is locally administered, so maclookup.app could not identify a maker.</p></div></article>
+        <article class="note"><span class="note-index">03</span><div><h3>The route to Inha</h3><p>Traceroute got answers from 7 hops on the way to inha.uz, then the routers stopped answering. Replies from inha.uz arrive with TTL 57. Starting from TTL 64, that means 64 − 57 = 7 routers, so the server is about 8 hops away.</p></div></article>
+        <article class="note"><span class="note-index">04</span><div><h3>Distance takes time</h3><p>Connecting to inha.uz took about 0.04 seconds. Connecting to the University of Tokyo took about 1.3 seconds. Signals take time to travel farther, and the longer path through more networks also adds delay.</p><div class="timings"><div><strong>0.04<span> s</span></strong><span>Inha University</span></div><div><strong>1.3<span> s</span></strong><span>University of Tokyo</span></div></div></div></article>
+        <article class="note"><span class="note-index">05</span><div><h3>Names, packets, and privacy</h3><p>I used dig to ask DNS servers about domain names and Wireshark to inspect packets. HTTPS showed why encryption matters for keeping data private while it travels.</p></div></article>
+      </div>
+    </section>
+
+    <section class="contact section reveal" id="contact" aria-labelledby="contact-title">
+      <p class="eyebrow">04 / CONTACT</p>
+      <h2 id="contact-title">Find me on GitHub<span class="accent">.</span></h2>
+      <a class="github-link" href="https://github.com/devleloper">@devleloper <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+  <footer><span>© Devlet Boltayev</span><a href="#about">Back to top <span aria-hidden="true">↑</span></a></footer>
+</body>
+</html>
